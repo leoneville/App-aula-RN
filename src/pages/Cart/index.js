@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-export default function About() {
+export default function Cart(navigation) {
  return (
      <View style={styles.container}>
-         <Text>About</Text>
-         <Button title='Navigate back'/>
+         <Text>Carrinho de compras</Text>
+         <Button title='Navigate' onPress={() => alert("Compras adicionadas ao carrinho")}/>
      </View>
   );
 }

@@ -1,19 +1,23 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native';
+
+import ButtonCart from '../../components/ButtonCart'; 
+import Header from '../../components/Header';
+import Product from '../../components/Product';
 
 export default function Home() {
+
+  const navigation = useNavigation();
  return (
-     <View style={styles.container}>
-         <Text>Home</Text>
-         <Button title='Navigate'/>
-     </View>
+    <SafeAreaView>
+        <Header title="Consoles"/>
+        <Product 
+        name="Xbox Series X"
+        description="Lorem ipsum dolor sit amet conseqt adiscipli elit. Lorem ipsum dolor sit amet conseqt adiscipli elit.Lorem ipsum dolor sit amet conseqt adiscipli elit.Lorem ipsum dolor sit amet conseqt adiscipli elit.Lorem ipsum dolor sit amet conseqt adiscipli elit."
+        price="R$ 4.0000,00"
+        />
+        <ButtonCart onPress={() => navigation.navigate("Cart")}/>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    }
-});
